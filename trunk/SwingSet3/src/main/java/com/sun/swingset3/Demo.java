@@ -209,7 +209,7 @@ public class Demo {
                 for (String path : sourceFilePaths) {
                 	try {
                     // sources are in jar
-                    URL url = getClass().getResource(path);
+                    URL url = getClass().getClassLoader().getResource(path);
                     if(url==null) {
                       // but if ran from IDE, go to sources to load them
                       url = new URI("file://" + USER_DIR + "/src/main/java/" + path).toURL();
